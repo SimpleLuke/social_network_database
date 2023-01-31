@@ -27,14 +27,16 @@ describe PostRepository do
   expect(posts.first.user_id).to eq '1'
   end
 
-  xit 'returns a post object with a specific id' do
-    repo = postReposxitory.new
+  it 'returns a post object with a specific id' do
+    repo = PostRepository.new
 
     post = repo.find(1)
 
     expect(post.id).to eq '1'
-    expect(post.name).to eq 'David'
-    expect(post.email).to eq 'david@gmail.com'
+    expect(post.title).to eq 'Learn to Code'
+    expect(post.content).to eq 'Coding is fun!'
+  expect(post.views).to eq '100'
+  expect(post.user_id).to eq '1'
   end
 
   xit 'creates a new post object' do
