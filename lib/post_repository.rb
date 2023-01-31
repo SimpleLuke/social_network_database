@@ -50,15 +50,15 @@ class PostRepository
   end
 
 
-  # def create(post)
-  #   sql = 'INSERT INTO posts (name, email) VALUES ($1, $2);'
-  #   params = [post.name,user.email]
-  #
-  #   DatabaseConnection.exec_params(sql,params)
-  #
-  #   return nil
-  # end
-  #
+  def create(post)
+    sql = 'INSERT INTO posts (title, content, views, user_id) VALUES ($1, $2, $3, $4);'
+    params = [post.title, post.content, post.views, post.user_id]
+
+    DatabaseConnection.exec_params(sql,params)
+
+    return nil
+  end
+
   # def update(post)
   #   sql = 'UPDATE posts SET name = $1, email = $2;'
   #   params = [post.name, user.email]

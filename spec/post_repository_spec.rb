@@ -39,19 +39,23 @@ describe PostRepository do
   expect(post.user_id).to eq '1'
   end
 
-  xit 'creates a new post object' do
-    repo = postReposxitory.new
+  it 'creates a new post object' do
+    repo = PostRepository.new
 
-    post = User.new
-    post.name = 'Jenny'
-    post.email = 'jenny@gmail.com'
+    post = Post.new
+    post.title = 'Pair Programming'
+    post.content = 'Pair is fun!'
+    post.views = '500'
+    post.user_id = '2'
 
     repo.create(post)
     all_posts = repo.all
 
-    expect(all_posts.length).to eq 3
-    expect(all_posts.last.name).to eq 'Jenny'
-    expect(all_posts.last.email).to eq 'jenny@gmail.com'
+    expect(all_posts.length).to eq 2
+    expect(all_posts.last.title).to eq 'Pair Programming'
+    expect(all_posts.last.content).to eq 'Pair is fun!'
+  expect(all_posts.last.views).to eq '500'
+  expect(all_posts.last.user_id).to eq '2'
   end
 
   xit 'deletes a post from the database' do
