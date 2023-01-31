@@ -25,6 +25,12 @@ describe UserRepository do
   end
 
   it 'returns a user object with a specific id' do
-    
+    repo = UserRepository.new
+
+    user = repo.find(1)
+
+    expect(user.id).to eq '1'
+    expect(user.name).to eq 'David'
+    expect(user.email).to eq 'david@gmail.com'
   end
 end

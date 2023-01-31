@@ -30,8 +30,20 @@ class UserRepository
   def find(id)
     # Executes the SQL query:
     # SELECT id, name, email FROM users WHERE id = $1;
+    sql = 'SELECT id, name, email FROM users WHERE id = $1;'
+    params = [id]
+
+    result_set = DatabaseConnection.exec_params(sql,params)
+
+    record = result_set[0]
+
+    user = User.new
+    user.id = record['id']
+    user.name = record['name']
+    user.email = record['email']
 
     # Returns a single User object.
+    return user
   end
 
 
