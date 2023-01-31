@@ -160,7 +160,18 @@ user.id # =>  1
 user.name # =>  'David'
 user.email # =>  'david@gmail.com'
 
-# Add more examples for each method
+# 3
+# create a new user object
+repo = UserRepository.new
+
+repo.create(user)
+
+all_users = repo.all
+
+all_users.length # => 3
+all_users.last.name #=> 'Jenny'
+all_users.last.email # => 'jenny@gmail.com'
+
 ```
 
 Encode this example as a test.

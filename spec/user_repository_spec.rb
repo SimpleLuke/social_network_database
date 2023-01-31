@@ -1,4 +1,5 @@
 require 'user_repository'
+require 'user'
 
 
 def reset_users_table
@@ -32,5 +33,21 @@ describe UserRepository do
     expect(user.id).to eq '1'
     expect(user.name).to eq 'David'
     expect(user.email).to eq 'david@gmail.com'
+  end
+
+  it 'creates a new user object' do
+repo = UserRepository.new
+
+    user = User.new
+    user.name = 'Jenny'
+    user.email = 'jenny@gmail.com'
+
+    repo.create(user)
+    all_users = repo.all
+
+  expect(all_users.length).to eq 3
+  expect(all_users.last.name).to eq 'Jenny'
+    expect(all_users.last.email).to eq 'jenny@gmail.com'
+
   end
 end

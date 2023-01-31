@@ -48,6 +48,12 @@ class UserRepository
 
 
   def create(user)
+    sql = 'INSERT INTO users (name, email) VALUES ($1, $2);'
+    params = [user.name,user.email]
+
+  DatabaseConnection.exec_params(sql,params)
+
+    return nil
   end
 
   def update(user)
