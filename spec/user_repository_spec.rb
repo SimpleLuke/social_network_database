@@ -61,4 +61,18 @@ repo = UserRepository.new
   expect(all_users.last.name).to eq 'Jeo'
     expect(all_users.last.email).to eq 'joe@gmail.com'
   end
+
+  it 'updates an user object data from the database' do
+    repo = UserRepository.new
+
+    user = repo.find(2) # => Jeo Object
+
+    user.name = 'Joe'
+    repo.update(user)
+    update_user = repo.find(2)
+
+    expect(update_user.id).to eq '2'
+  expect(update_user.name).to eq 'Joe'
+    expect(update_user.email).to eq 'joe@gmail.com'
+  end
 end

@@ -51,19 +51,25 @@ class UserRepository
     sql = 'INSERT INTO users (name, email) VALUES ($1, $2);'
     params = [user.name,user.email]
 
-  DatabaseConnection.exec_params(sql,params)
+    DatabaseConnection.exec_params(sql,params)
 
     return nil
   end
 
   def update(user)
+    sql = 'UPDATE users SET name = $1, email = $2;'
+    params = [user.name, user.email]
+
+    DatabaseConnection.exec_params(sql,params)
+
+    return nil
   end
 
   def delete(id)
     sql = 'DELETE FROM users WHERE id = $1;'
     params = [id]
 
-  DatabaseConnection.exec_params(sql,params)
+    DatabaseConnection.exec_params(sql,params)
 
     return nil
   end

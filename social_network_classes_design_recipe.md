@@ -184,6 +184,26 @@ all_users.length # => 1
 all_users.last.name #=> 'Jeo'
 all_users.last.email # => 'jeo@gmail.com'
 
+# 5
+# Update user data from the database
+
+repo = UserRepository.new
+
+user = repo.find(2) # => Jeo Object
+
+user.name = 'Joe'
+repo.update(user)
+update_user = repo.find(2)
+
+update_user.id # => 2
+update_user.name #=> 'Joe'
+update_user.email #=> 'joe@gmail.com'
+
+
+
+
+
+
 
 ```
 
