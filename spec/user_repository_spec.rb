@@ -36,7 +36,7 @@ describe UserRepository do
   end
 
   it 'creates a new user object' do
-repo = UserRepository.new
+    repo = UserRepository.new
 
     user = User.new
     user.name = 'Jenny'
@@ -45,20 +45,20 @@ repo = UserRepository.new
     repo.create(user)
     all_users = repo.all
 
-  expect(all_users.length).to eq 3
-  expect(all_users.last.name).to eq 'Jenny'
+    expect(all_users.length).to eq 3
+    expect(all_users.last.name).to eq 'Jenny'
     expect(all_users.last.email).to eq 'jenny@gmail.com'
   end
 
   it 'deletes a user from the database' do
     repo = UserRepository.new
 
-  repo.delete(1)
+    repo.delete(1)
 
-  all_users = repo.all
+    all_users = repo.all
 
-  expect(all_users.length).to eq 1
-  expect(all_users.last.name).to eq 'Jeo'
+    expect(all_users.length).to eq 1
+    expect(all_users.last.name).to eq 'Jeo'
     expect(all_users.last.email).to eq 'joe@gmail.com'
   end
 
@@ -72,7 +72,7 @@ repo = UserRepository.new
     update_user = repo.find(2)
 
     expect(update_user.id).to eq '2'
-  expect(update_user.name).to eq 'Joe'
+    expect(update_user.name).to eq 'Joe'
     expect(update_user.email).to eq 'joe@gmail.com'
   end
 end
