@@ -68,17 +68,19 @@ describe PostRepository do
     expect(all_posts.length).to eq 0
   end
 
-  xit 'updates an post object data from the database' do
-    repo = postReposxitory.new
+  it 'updates an post object data from the database' do
+    repo = PostRepository.new
 
-    post = repo.find(2) # => Jeo Object
+    post = repo.find(1) 
 
-    post.name = 'Joe'
+    post.content = 'Coding is extra extra fun!!!!'
     repo.update(post)
-    update_post = repo.find(2)
+    update_post = repo.find(1)
 
-    expect(update_post.id).to eq '2'
-    expect(update_post.name).to eq 'Joe'
-    expect(update_post.email).to eq 'joe@gmail.com'
+    expect(update_post.id).to eq '1'
+    expect(update_post.title).to eq 'Learn to Code'
+  expect(update_post.content).to eq 'Coding is extra extra fun!!!!'
+  expect(update_post.views).to eq '100'
+  expect(update_post.user_id).to eq '1'
   end
 end
