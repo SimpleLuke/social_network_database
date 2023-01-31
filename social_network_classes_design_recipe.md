@@ -172,6 +172,19 @@ all_users.length # => 3
 all_users.last.name #=> 'Jenny'
 all_users.last.email # => 'jenny@gmail.com'
 
+# 4
+# delete a user from the database
+repo = UserRepository.new
+
+repo.delete(1)
+
+all_users = repo.all
+
+all_users.length # => 1
+all_users.last.name #=> 'Jeo'
+all_users.last.email # => 'jeo@gmail.com'
+
+
 ```
 
 Encode this example as a test.

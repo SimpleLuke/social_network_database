@@ -48,6 +48,17 @@ repo = UserRepository.new
   expect(all_users.length).to eq 3
   expect(all_users.last.name).to eq 'Jenny'
     expect(all_users.last.email).to eq 'jenny@gmail.com'
+  end
 
+  it 'deletes a user from the database' do
+    repo = UserRepository.new
+
+  repo.delete(1)
+
+  all_users = repo.all
+
+  expect(all_users.length).to eq 1
+  expect(all_users.last.name).to eq 'Jeo'
+    expect(all_users.last.email).to eq 'joe@gmail.com'
   end
 end
