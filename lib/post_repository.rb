@@ -39,11 +39,11 @@ class PostRepository
     record = result_set[0]
 
     post = Post.new
-      post.id = record['id']
-      post.title = record['title'] 
-      post.content = record['content']
-      post.views = record['views']
-      post.user_id = record['user_id']
+    post.id = record['id']
+    post.title = record['title'] 
+    post.content = record['content']
+    post.views = record['views']
+    post.user_id = record['user_id']
 
     # Returns a single post object.
     return post

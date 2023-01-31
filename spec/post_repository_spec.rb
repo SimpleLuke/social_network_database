@@ -23,8 +23,8 @@ describe PostRepository do
     expect(posts.first.id).to eq '1'
     expect(posts.first.title).to eq 'Learn to Code'
     expect(posts.first.content).to eq 'Coding is fun!'
-  expect(posts.first.views).to eq '100'
-  expect(posts.first.user_id).to eq '1'
+    expect(posts.first.views).to eq '100'
+    expect(posts.first.user_id).to eq '1'
   end
 
   it 'returns a post object with a specific id' do
@@ -35,8 +35,8 @@ describe PostRepository do
     expect(post.id).to eq '1'
     expect(post.title).to eq 'Learn to Code'
     expect(post.content).to eq 'Coding is fun!'
-  expect(post.views).to eq '100'
-  expect(post.user_id).to eq '1'
+    expect(post.views).to eq '100'
+    expect(post.user_id).to eq '1'
   end
 
   it 'creates a new post object' do
@@ -54,8 +54,8 @@ describe PostRepository do
     expect(all_posts.length).to eq 2
     expect(all_posts.last.title).to eq 'Pair Programming'
     expect(all_posts.last.content).to eq 'Pair is fun!'
-  expect(all_posts.last.views).to eq '500'
-  expect(all_posts.last.user_id).to eq '2'
+    expect(all_posts.last.views).to eq '500'
+    expect(all_posts.last.user_id).to eq '2'
   end
 
   it 'deletes a post from the database' do
@@ -79,8 +79,8 @@ describe PostRepository do
 
     expect(update_post.id).to eq '1'
     expect(update_post.title).to eq 'Learn to Code'
-  expect(update_post.content).to eq 'Coding is extra extra fun!!!!'
-  expect(update_post.views).to eq '100'
-  expect(update_post.user_id).to eq '1'
+    expect(update_post.content).to eq 'Coding is extra extra fun!!!!'
+    expect(update_post.views).to eq '100'
+    expect(update_post.user_id).to eq '1'
   end
 end
