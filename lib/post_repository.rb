@@ -67,13 +67,13 @@ class PostRepository
   #
   #   return nil
   # end
-  #
-  # def delete(id)
-  #   sql = 'DELETE FROM posts WHERE id = $1;'
-  #   params = [id]
-  #
-  #   DatabaseConnection.exec_params(sql,params)
-  #
-  #   return nil
-  # end
+
+  def delete(id)
+    sql = 'DELETE FROM posts WHERE id = $1;'
+    params = [id]
+
+    DatabaseConnection.exec_params(sql,params)
+
+    return nil
+  end
 end

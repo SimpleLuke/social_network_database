@@ -58,16 +58,14 @@ describe PostRepository do
   expect(all_posts.last.user_id).to eq '2'
   end
 
-  xit 'deletes a post from the database' do
-    repo = postReposxitory.new
+  it 'deletes a post from the database' do
+    repo = PostRepository.new
 
     repo.delete(1)
 
     all_posts = repo.all
 
-    expect(all_posts.length).to eq 1
-    expect(all_posts.last.name).to eq 'Jeo'
-    expect(all_posts.last.email).to eq 'joe@gmail.com'
+    expect(all_posts.length).to eq 0
   end
 
   xit 'updates an post object data from the database' do
