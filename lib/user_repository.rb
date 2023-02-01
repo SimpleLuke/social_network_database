@@ -18,7 +18,7 @@ class UserRepository
       user.id = record['id']
       user.name = record['name']
       user.email = record['email']
-
+ 
       users << user
     end
     # Returns an array of User objects.
